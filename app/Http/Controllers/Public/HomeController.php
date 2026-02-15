@@ -25,7 +25,7 @@ class HomeController extends Controller
         $featuredSkills = Skill::query()
             ->where('is_featured', true)
             ->orderBy('sort_order')
-            ->get(['id','name','category','level']);
+            ->get(['id','name','category']);
 
         return Inertia::render('Home', [
             'profile' => $profile,

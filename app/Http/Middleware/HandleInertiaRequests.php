@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
-
+use App\Models\Project;
 class HandleInertiaRequests extends Middleware
 {
     /**
@@ -38,6 +38,13 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'name' => config('app.name'),
+            'palette' => [
+                'projects' => Project::query()
+                    ->where('is_published', true)
+                    ->orderByDesc('is_featured')
+                    ->orderBy('sort_order')
+                    ->get(['title', 'slug', 'tagline'])
+            ],
             'auth' => [
                 'user' => $request->user(),
             ],

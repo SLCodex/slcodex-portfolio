@@ -17,7 +17,7 @@ class ExperienceController extends Controller
             ->orderBy('sort_order')
             ->get();
 
-        return Inertia::render('Experience/Index', [
+        return Inertia::render('experience/index', [
             'experiences' => $experiences,
         ]);
     }

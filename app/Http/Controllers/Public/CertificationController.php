@@ -22,7 +22,7 @@ class CertificationController extends Controller
             return $c;
         });
 
-        return Inertia::render('Certifications/Index', [
+        return Inertia::render('certifications/index', [
             'certifications' => $certs,
         ]);
     }

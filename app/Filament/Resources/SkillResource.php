@@ -36,17 +36,13 @@ class SkillResource extends Resource
                     'Frontend' => 'Frontend',
                     'Backend' => 'Backend',
                     'DevOps' => 'DevOps',
-                    'Tools' => 'Tools',
+                    'CMS & No-Code' => 'CMS & No-Code',
+                    'Developer Tools' => 'Developer Tools',
+                    'Automation' => 'Automation',
+                    'Security & Identity' => 'Security & Identity',
                     'Mobile' => 'Mobile',
                 ])
                 ->searchable(),
-
-            TextInput::make('level')
-                ->numeric()
-                ->minValue(1)
-                ->maxValue(5)
-                ->default(3)
-                ->required(),
 
             TextInput::make('sort_order')
                 ->numeric()
@@ -63,7 +59,6 @@ class SkillResource extends Resource
             ->columns([
                 TextColumn::make('name')->searchable()->sortable(),
                 TextColumn::make('category')->sortable(),
-                TextColumn::make('level')->sortable(),
                 IconColumn::make('is_featured')->boolean(),
                 TextColumn::make('sort_order')->sortable(),
                 TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),

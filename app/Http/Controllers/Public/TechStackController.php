@@ -12,13 +12,13 @@ class TechStackController extends Controller
     {
         $skills = Skill::query()
             ->orderBy('category')
-            ->orderByDesc('level')
+            ->orderByDesc('name')
             ->orderBy('sort_order')
-            ->get(['id','name','category','level']);
+            ->get(['id','name','category']);
 
         $grouped = $skills->groupBy('category');
 
-        return Inertia::render('Tech/Index', [
+        return Inertia::render('tech-stack/index', [
             'skillsByCategory' => $grouped,
         ]);
     }

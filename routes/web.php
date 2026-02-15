@@ -9,11 +9,11 @@ use App\Http\Controllers\Public\ExperienceController;
 use App\Http\Controllers\Public\CertificationController;
 use App\Http\Controllers\Public\TechStackController;
 use App\Http\Controllers\Public\ContactController;
-Route::get('/', function () {
-    return Inertia::render('welcome', [
-        'canRegister' => Features::enabled(Features::registration()),
-    ]);
-})->name('home');
+// Route::get('/', function () {
+//     return Inertia::render('welcome', [
+//         'canRegister' => Features::enabled(Features::registration()),
+//     ]);
+// })->name('home');
 
 Route::get('dashboard', function () {
     return Inertia::render('dashboard');

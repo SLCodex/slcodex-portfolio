@@ -18,7 +18,7 @@ class ProjectController extends Controller
             ->latest()
             ->get();
 
-        return Inertia::render('Projects/Index', [
+        return Inertia::render('projects/index', [
             'projects' => $projects,
         ]);
     }
@@ -33,7 +33,7 @@ class ProjectController extends Controller
         $thumbnail = $project->getFirstMediaUrl('thumbnail');
         $gallery = $project->getMedia('gallery')->map(fn ($m) => $m->getUrl());
 
-        return Inertia::render('Projects/Show', [
+        return Inertia::render('projects/show', [
             'project' => $project,
             'thumbnail' => $thumbnail,
             'gallery' => $gallery,
