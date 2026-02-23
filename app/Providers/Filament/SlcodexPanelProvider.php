@@ -25,7 +25,7 @@ class SlcodexPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('slcodex')
-            ->path('slcodex')
+            ->path('admin')
             ->login()
             ->colors([
                 'primary' => Color::Amber,
