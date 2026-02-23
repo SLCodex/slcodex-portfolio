@@ -4,7 +4,6 @@ import type { PropsWithChildren } from 'react'
 import CommandPalette from '@/components/command-palette'
 import ThemeToggleIcon from '@/components/theme-toggle-icon'
 
-import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 
 type NavItem = { href: string; label: string }
